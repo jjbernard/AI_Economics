@@ -9,5 +9,5 @@ if __name__ == "__main__":
     result = result.join(df.group_by("model").agg(pl.col("tokens").max()).rename({"tokens": "max"}), on="model")
     result = result.join(df.group_by("model").agg(pl.col("tokens").min()).rename({"tokens": "min"}), on="model")
 
-    # With Polars we need to .collect() to print the result
-    print(result.collect())
+    # output to a new CSV
+    result.sink_csv("table.csv")

@@ -15,7 +15,7 @@ if __name__ == "__main__":
     results = pl.DataFrame(None, schema={"runID": pl.Int64, "model": pl.String, "tokens": pl.Int64})
 
     # OpenAI run
-    models = ["gpt-3.5-turbo", "o3", "gpt-5", "gpt-5-chat-latest"]
+    models = ["gpt-3.5-turbo", "o3", "gpt-5", "gpt-5-chat-latest", "gpt-5-mini", "gpt-4.1-nano"]
 
     for i in range(MAX):
         for model in models:
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
     # Mistral run
     key = os.environ.get("MISTRAL_API_KEY1")
-    models = ["magistral-medium-2507", "mistral-medium-2505"]
+    models = ["magistral-medium-2507", "mistral-medium-2505", "ministral-8b-2410", "mistral-small-2503"]
 
     for i in range(MAX):
         for model in models:
